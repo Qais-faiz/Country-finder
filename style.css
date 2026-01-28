@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f4f6fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Subtle premium background */
+.bg-gradient {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top left, #e3f2ff, transparent 40%),
+                radial-gradient(circle at bottom right, #fde7f3, transparent 40%),
+                #f4f6fb;
+    z-index: -1;
+}
+
+/* Glass card base */
+.glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+header.header {
+    text-align: center;
+    padding: 28px 34px;
+    margin-top: 60px;
+    max-width: 620px;
+}
+
+.app-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #111;
+}
+
+.subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Search box */
+.search-box {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+header.header input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+header.header input:focus {
+    border-color: #667eea;
+}
+
+header.header button {
+    padding: 12px 22px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+header.header button:hover {
+    background: #5563d6;
+    transform: translateY(-1px);
+}
+
+/* RESULT CARD */
+#result {
+    display: flex;
+    gap: 50px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    align-items: flex-start;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+/* Fade in effect */
+#result.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* LEFT SIDE (Name → Region → Flag) */
+.primaryDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 6px;
+}
+
+/* Country Name */
+.primaryDetails h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: -23px;
+    color: #111;
+}
+
+/* Region */
+.primaryDetails h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+/* Flag */
+.primaryDetails img {
+    margin-top: 12px;
+    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* RIGHT SIDE DETAILS PANEL */
+.secondaryDetail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Each detail row as card */
+.secondaryDetail p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: 0.2s ease;
+}
+
+/* Hover effect for right side */
+.secondaryDetail p:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* ERROR MESSAGE */
+.error {
+    margin-top: 20px;
+    padding: 12px 18px;
+    color: #b00020;
+    font-weight: 600;
+    border-left: 4px solid #ff3b3b;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Hide error */
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE: Stack left & right on small screens */
+@media (max-width: 780px) {
+    #result {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .primaryDetails img {
+        width: 150px;
+    }
+
+    .secondaryDetail p {
+        font-size: 15px;
+        padding: 10px 14px;
+    }
+}

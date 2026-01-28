@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Finder</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-gradient"></div>
+
+    <header class="header glass">
+        <h1 class="app-title">🌍 Country Finder</h1>
+        <p class="subtitle">Search any country and get instant facts</p>
+
+        <div class="search-box">
+            <input type="text" id="countryInput" placeholder="Insert country name...">
+            <button id="searchBtn">Search</button>
+        </div>
+    </header>
+
+    <!-- ERROR MESSAGE UI -->
+    <div id="errorMsg" class="glass error hidden">
+        ❌ Country not found. Try another name.
+    </div>
+
+    <section id="result" class="glass"></section>
+
+    <script src="script.js"></script>
+</body>
+</html>
